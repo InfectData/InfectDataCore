@@ -1,8 +1,15 @@
 <h1>Startseite</h1>
 
 <% if current_user %>
-  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <% if current_user.admin? %>
+      <p>Ich bin ein Admin.</p>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <% else %>
+      <p>Ich bin kein Admin.</p>
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <% end %>
 <% else %>
+  <p>Ich bin nicht eingeloggt.</p>
   <%= link_to 'Sign up', new_user_registration_path %>
   <%= link_to 'Sign in', new_user_session_path%>
 <% end %>
