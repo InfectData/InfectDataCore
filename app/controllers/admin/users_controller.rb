@@ -69,6 +69,6 @@ class Admin::UsersController < Admin::AdminController
 
       # Only allow a list of trusted parameters through.
       def user_params
-        params.require(:user).permit(:email, :admin@test.de)
+        params.require(:user).permit(:email, :role)
       end
 end

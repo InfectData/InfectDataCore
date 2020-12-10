@@ -17,8 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :test@test.de %>
-    <%= form.text_field :test@test.de %>
+    <%= form.label :role %>
+    <%= form.select :role, options_for_select([:user, :vip, :admin, :arzt, :labor, :ga, :ls, :rki]) %>
   </div>
 
   <div class="actions">
