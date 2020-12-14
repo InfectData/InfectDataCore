@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  gender: MyString
+  birthdate: 2020-12-14
+  place_of_residence: MyString
+  diagnosis: MyString
+  user: one
+  confirmed_at: 2020-12-14 12:52:54
+
+two:
+  first_name: MyString
+  last_name: MyString
+  gender: MyString
+  birthdate: 2020-12-14
+  place_of_residence: MyString
+  diagnosis: MyString
+  user: two
+  confirmed_at: 2020-12-14 12:52:54

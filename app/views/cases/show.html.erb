@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @case.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @case.last_name %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @case.gender %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @case.birthdate %>
+</p>
+
+<p>
+  <strong>Place of residence:</strong>
+  <%= @case.place_of_residence %>
+</p>
+
+<p>
+  <strong>Diagnosis:</strong>
+  <%= @case.diagnosis %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @case.user_id %>
+</p>
+
+<p>
+  <strong>Confirmed at:</strong>
+  <%= @case.confirmed_at %>
+</p>
+
+<%= link_to 'Edit', edit_case_path(@case) %> |
+<%= link_to 'Back', cases_path %>
