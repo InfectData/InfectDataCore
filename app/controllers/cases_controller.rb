@@ -1,6 +1,13 @@
 class CasesController < ApplicationController
   before_action :set_case, only: [:show, :edit, :update, :destroy]
+  before_action :allowed_to_create, only: [:new, :create]
 
+  private
+  def allowed_to_create
+    unless current_user.role.in?(['arzt', 'labor'])
+      redirect_to root_path
+    end
+  end
   # GET /cases
   # GET /cases.json
   def index
