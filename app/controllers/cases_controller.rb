@@ -2,12 +2,6 @@ class CasesController < ApplicationController
   before_action :set_case, only: [:show, :edit, :update, :destroy]
   before_action :allowed_to_create, only: [:new, :create]
 
-  private
-  def allowed_to_create
-    unless current_user.role.in?(['arzt', 'labor'])
-      redirect_to root_path
-    end
-  end
   # GET /cases
   # GET /cases.json
   def index
@@ -69,6 +63,13 @@ class CasesController < ApplicationController
   end
 
   private
+
+#Schränkt den Zugriff für Ärzte und Labore ein
+    def allowed_to_create
+      unless current_user.role.in?(['arzt', 'labor'])
+      redirect_to root_path
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_case
       @case = Case.find(params[:id])
@@ -78,4 +79,5 @@ class CasesController < ApplicationController
     def case_params
       params.require(:case).permit(:first_name, :last_name, :gender, :birthdate, :place_of_residence, :diagnosis, :user_id, :confirmed_at)
     end
+  end
 end
