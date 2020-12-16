@@ -31,11 +31,12 @@
         <td><%= link_to 'Show', case_data %></td>
         <td><%= link_to 'Edit', edit_case_path(case_data) %></td>
         <td><%= link_to 'Destroy', case_data, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Confirm', post_confirm_path(post), method: :post, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-<%= link_to 'Startseite', root_path %>
-<%= link_to 'New Case', new_case_path %>
+<button><%= link_to 'Startseite', root_path %></button>
+<button><%= link_to 'New Case', new_case_path %></button>

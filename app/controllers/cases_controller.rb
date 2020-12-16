@@ -2,6 +2,12 @@ class CasesController < ApplicationController
   before_action :set_case, only: [:show, :edit, :update, :destroy]
   before_action :allowed_to_create, only: [:new, :create]
 
+  #Um einen Fall durch Arzt/Labor zu bestätigen.
+  def confirm
+    Case.where(id: params[:id]).update_attribute!(confirmed_at: Time.now)
+    redirect_to cases_path
+  end
+
   # GET /cases
   # GET /cases.json
   def index

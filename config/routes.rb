@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :cases
+  resources :cases do
+    post 'confirm', on: :member
+  end
+  
   devise_for :users
 
   root to: "content#homepage"
