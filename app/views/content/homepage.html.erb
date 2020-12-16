@@ -7,6 +7,8 @@
       <button><%= link_to 'New Case', new_case_path%></button>
     <%elsif current_user.role == 'labor'%>
       <button><%= link_to 'New Case', new_case_path%></button>
+    <%elsif current_user.role == 'admin'%>
+    <button><%= link_to 'User anzeigen', users_path%></button>
   <%end%>
 
 <button><%= link_to 'All Cases', cases_path %></button>
