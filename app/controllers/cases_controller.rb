@@ -4,7 +4,7 @@ class CasesController < ApplicationController
 
   #Um einen Fall durch Arzt/Labor zu bestätigen.
   def confirm
-    Case.where(id: params[:id]).update_attribute!(confirmed_at: Time.now)
+    Case.where(id: params[:id]).update_attribute(confirmed_at: Time.now)
     redirect_to cases_path
   end
 
@@ -17,15 +17,18 @@ class CasesController < ApplicationController
   # GET /cases/1
   # GET /cases/1.json
   def show
+    @case = Case.find(params[:id])
   end
 
   # GET /cases/new
   def new
     @case = Case.new
+    @case.user_id = current_user.id
   end
 
   # GET /cases/1/edit
   def edit
+    @case = Case.find(params[:id])
   end
 
   # POST /cases
