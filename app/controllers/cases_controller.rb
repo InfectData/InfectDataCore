@@ -4,7 +4,7 @@ class CasesController < ApplicationController
 
   #Um einen Fall durch Arzt/Labor zu bestätigen.
   def confirm
-    @case.update_attribute(confirmed_at: Time.now)
+    @case.update_attribute("confirmed_at", Time.now)
     redirect_to cases_path
   end
 
