@@ -27,8 +27,18 @@
   </div>
 
   <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_confirmation %>
+    <%= form.text_field :password_confirmation %>
+  </div>
+
+  <div class="field">
     <%= form.label :role %>
-    <%= form.select :role, options_for_select([:user, :vip, :admin, :arzt, :labor, :ga, :ls, :rki]) %>
+    <%= form.select :role, options_for_select([:admin, :arzt, :labor, :ga, :ls, :rki]) %>
   </div>
 
   <div class="actions">
