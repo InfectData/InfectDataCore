@@ -17,7 +17,7 @@ class CasesController < ApplicationController
   # GET /cases/1
   # GET /cases/1.json
   def show
-    @case = Case.find(params[:id])
+
   end
 
   # GET /cases/new
@@ -28,7 +28,7 @@ class CasesController < ApplicationController
 
   # GET /cases/1/edit
   def edit
-    @case = Case.find(params[:id])
+    
   end
 
   # POST /cases
