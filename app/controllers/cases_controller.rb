@@ -4,7 +4,7 @@ class CasesController < ApplicationController
 
   #Um einen Fall durch Arzt/Labor zu bestätigen.
   def confirm
-    Case.update_attribute(confirmed_at: Time.now)
+    @case.update_attribute(confirmed_at: Time.now)
     redirect_to cases_path
   end
 
@@ -73,7 +73,7 @@ class CasesController < ApplicationController
 
   private
 
-#Schränkt den Zugriff für Ärzte und Labore ein
+    #Schränkt den Zugriff für Ärzte und Labore ein
     def allowed_to_create
       unless current_user.role.in?(['arzt', 'labor'])
       redirect_to root_path
