@@ -28,7 +28,7 @@ class CasesController < ApplicationController
 
   # GET /cases/1/edit
   def edit
-    
+
   end
 
   # POST /cases
@@ -75,8 +75,7 @@ class CasesController < ApplicationController
 
     #Schränkt den Zugriff für Ärzte und Labore ein
     def allowed_to_create
-      unless current_user.role.in?(['arzt', 'labor'])
-      redirect_to root_path
+      redirect_to root_path unless current_user.role.in?(['arzt', 'labor'])
     end
 
     # Use callbacks to share common setup or constraints between actions.
@@ -88,5 +87,4 @@ class CasesController < ApplicationController
     def case_params
       params.require(:case).permit(:first_name, :last_name, :gender, :birthdate, :place_of_residence, :diagnosis, :user_id, :confirmed_at)
     end
-  end
 end
