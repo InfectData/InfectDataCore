@@ -11,7 +11,7 @@ class CasesController < ApplicationController
   # GET /cases
   # GET /cases.json
   def index
-    @cases = Case.where(:user_id => current_user.id)
+    @cases = current_user.cases
   end
 
   # GET /cases/1
