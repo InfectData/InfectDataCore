@@ -1,6 +1,7 @@
 class DiagnosesController < ApplicationController
   before_action :set_diagnosis, only: [:show, :edit, :update, :destroy]
-
+  before_action :allowed_to_create, only: [:new, :create]
+  
   # GET /diagnoses
   # GET /diagnoses.json
   def index
@@ -62,6 +63,10 @@ class DiagnosesController < ApplicationController
   end
 
   private
+    #Nur das RKI darf Diagnosen anlegen.
+    def allowed_to_create
+      redirect_to root_path unless current_user.role.in?(['rki'])
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_diagnosis
       @diagnosis = Diagnosis.find(params[:id])
