@@ -38,7 +38,7 @@
 
   <div class="field">
     <%= form.label :diagnosis %>
-    <%= form.text_field :diagnosis %>
+    <%= form.collection_select :diagnosis_id, Diagnosis.all, :id, :illness, :prompt => true %>
   </div>
 
   <div class="field">
