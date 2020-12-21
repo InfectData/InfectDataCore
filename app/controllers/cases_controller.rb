@@ -37,7 +37,7 @@ class CasesController < ApplicationController
     @case = Case.new(case_params) do |a|
       a.user_id = current_user.id
     end
-    
+
     respond_to do |format|
       if @case.save
         format.html { redirect_to @case, notice: 'Case was successfully created.' }

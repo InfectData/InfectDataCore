@@ -1,15 +1,3 @@
 <h1>Startseite</h1>
 <h3>Hallo <%= current_user.first_name %> <%= current_user.last_name %></h3>
 <p>Rolle: <%= current_user.role %></p>
-
-<!-- Zum Ausblenden der Buttons für User, die keine Fälle erstellen können: -->
-  <% if current_user.role == 'arzt'%>
-      <button><%= link_to 'New Case', new_case_path%></button>
-    <%elsif current_user.role == 'labor'%>
-      <button><%= link_to 'New Case', new_case_path%></button>
-    <%elsif current_user.role == 'admin'%>
-    <button><%= link_to 'User anzeigen', users_path%></button>
-  <%end%>
-
-<button><%= link_to 'All Cases', cases_path %></button>
-<button><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></button>

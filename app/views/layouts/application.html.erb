@@ -13,6 +13,19 @@
   </head>
   <body>
 
+<!-- Generiert die entsprechende Navbar -->
+      <% if current_user%>
+        <% if current_user.role == 'arzt'%>
+          <%= render 'layouts/navigation_al'%>
+        <%elsif current_user.role == 'labor'%>
+          <%= render 'layouts/navigation'%>
+        <%elsif current_user.role == 'admin'%>
+          <%= render 'layouts/navigation_admin'%>
+        <%elsif current_user.role == 'rki'%>
+          <%= render 'layouts/navigation_rki'%>
+        <% end %>
+      <% end %>
+
     <%= yield %>
 </body>
 </html>
