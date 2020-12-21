@@ -38,18 +38,7 @@
 
   <div class="field">
     <%= form.label :diagnosis %>
-    <select name="case[diagnosis_id]" id="diagnosis_id">
-        <% Diagnosis.all.each do |diagnosis| %>
-          <option value="<%= diagnosis.id %>">
-            <%= diagnosis.illness %>
-          </option>
-        <% end %>
-    </select>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= form.collection_select :diagnosis_id, Diagnosis.all, :id, :illness, :prompt => true %>
   </div>
 
   <div class="field">

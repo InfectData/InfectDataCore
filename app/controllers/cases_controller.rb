@@ -34,8 +34,10 @@ class CasesController < ApplicationController
   # POST /cases
   # POST /cases.json
   def create
-    @case = Case.new(case_params)
-
+    @case = Case.new(case_params) do |a|
+      a.user_id = current_user.id
+    end
+    
     respond_to do |format|
       if @case.save
         format.html { redirect_to @case, notice: 'Case was successfully created.' }
@@ -86,6 +88,6 @@ class CasesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def case_params
       params.require(:case).permit(:first_name, :last_name, :gender,
-        :birthdate, :place_of_residence, :diagnosis, :user_id, :case_id, :confirmed_at)
+        :birthdate, :place_of_residence, :diagnosis_id, :user_id, :case_id, :confirmed_at)
     end
 end
