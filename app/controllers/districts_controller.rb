@@ -1,5 +1,6 @@
 class DistrictsController < ApplicationController
   before_action :set_district, only: [:show, :edit, :update, :destroy]
+  before_action :allowed_to_create, only: [:new, :create]
 
   # GET /districts
   # GET /districts.json
@@ -65,6 +66,11 @@ class DistrictsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_district
       @district = District.find(params[:id])
+    end
+
+    #Schränkt den Zugriff für Admin ein
+    def allowed_to_create
+      redirect_to root_path unless current_user.role.in?(['admin'])
     end
 
     # Only allow a list of trusted parameters through.
