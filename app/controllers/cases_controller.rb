@@ -85,6 +85,7 @@ class CasesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def case_params
-      params.require(:case).permit(:first_name, :last_name, :gender, :birthdate, :place_of_residence, :diagnosis, :user_id, :confirmed_at)
+      params.require(:case).permit(:first_name, :last_name, :gender,
+        :birthdate, :place_of_residence, :diagnosis, :user_id, :case_id, :confirmed_at)
     end
 end
