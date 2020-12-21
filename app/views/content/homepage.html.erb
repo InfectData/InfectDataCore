@@ -1,3 +1,8 @@
-<h1>Startseite</h1>
-<h3>Hallo <%= current_user.first_name %> <%= current_user.last_name %></h3>
-<p>Rolle: <%= current_user.role %></p>
+<main role="main" class="container">
+  <div class="starter-template">
+    <br>
+    <h1>Startseite</h1>
+    <h3>Hallo <%= current_user.first_name %> <%= current_user.last_name %></h3>
+    <p>Deine Rolle ist: <%= current_user.role %></p>
+  </div>
+</main>
