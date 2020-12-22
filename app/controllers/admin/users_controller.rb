@@ -1,28 +1,20 @@
 class Admin::UsersController < Admin::AdminController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-    # GET /users
-    # GET /users.json
     def index
       @users = User.all
     end
 
-    # GET /users/1
-    # GET /users/1.json
     def show
     end
 
-    # GET /users/new
     def new
       @user = User.new
     end
 
-    # GET /users/1/edit
     def edit
     end
 
-    # POST /users
-    # POST /users.json
     def create
       @user = User.new(user_params)
 
@@ -37,8 +29,6 @@ class Admin::UsersController < Admin::AdminController
       end
     end
 
-    # PATCH/PUT /users/1
-    # PATCH/PUT /users/1.json
     def update
       respond_to do |format|
         if @user.update(user_params)
@@ -51,8 +41,6 @@ class Admin::UsersController < Admin::AdminController
       end
     end
 
-    # DELETE /users/1
-    # DELETE /users/1.json
     def destroy
       @user.destroy
       respond_to do |format|
@@ -62,13 +50,13 @@ class Admin::UsersController < Admin::AdminController
     end
 
     private
-      # Use callbacks to share common setup or constraints between actions.
+      # Zur Vereinfachung und Vermeidung von Code-Wiederholung
       def set_user
         @user = User.find(params[:id])
       end
 
-      # Only allow a list of trusted parameters through.
+      # Erlaubt diese Liste an Parametern
       def user_params
-        params.require(:user).permit(:email, :role, :first_name, :last_name, :district_id, :user_id)
+        params.require(:user).permit(:email,:password, :password_confirmation, :role, :first_name, :last_name, :district_id, :user_id)
       end
 end

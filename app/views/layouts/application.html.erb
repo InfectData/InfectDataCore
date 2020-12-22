@@ -18,7 +18,7 @@
         <% if current_user.role == 'arzt'%>
           <%= render 'layouts/navigation_al'%>
         <%elsif current_user.role == 'labor'%>
-          <%= render 'layouts/navigation'%>
+          <%= render 'layouts/navigation_al'%>
         <%elsif current_user.role == 'admin'%>
           <%= render 'layouts/navigation_admin'%>
         <%elsif current_user.role == 'rki'%>

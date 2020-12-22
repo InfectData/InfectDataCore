@@ -2,28 +2,20 @@ class DistrictsController < ApplicationController
   before_action :set_district, only: [:show, :edit, :update, :destroy]
   before_action :allowed_to_create, only: [:new, :create]
 
-  # GET /districts
-  # GET /districts.json
   def index
     @districts = District.all
   end
 
-  # GET /districts/1
-  # GET /districts/1.json
   def show
   end
 
-  # GET /districts/new
   def new
     @district = District.new
   end
 
-  # GET /districts/1/edit
   def edit
   end
 
-  # POST /districts
-  # POST /districts.json
   def create
     @district = District.new(district_params)
 
@@ -38,8 +30,6 @@ class DistrictsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /districts/1
-  # PATCH/PUT /districts/1.json
   def update
     respond_to do |format|
       if @district.update(district_params)
@@ -52,8 +42,6 @@ class DistrictsController < ApplicationController
     end
   end
 
-  # DELETE /districts/1
-  # DELETE /districts/1.json
   def destroy
     @district.destroy
     respond_to do |format|
@@ -63,7 +51,7 @@ class DistrictsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_district
       @district = District.find(params[:id])
     end
@@ -73,7 +61,7 @@ class DistrictsController < ApplicationController
       redirect_to root_path unless current_user.role.in?(['admin'])
     end
 
-    # Only allow a list of trusted parameters through.
+
     def district_params
       params.require(:district).permit(:name, :place, :postal_code)
     end

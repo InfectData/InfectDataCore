@@ -34,8 +34,8 @@ class CasesController < ApplicationController
   # POST /cases
   # POST /cases.json
   def create
-    @case = Case.new(case_params) do |case|
-      case.user_id = current_user.id
+    @case = Case.new(case_params) do |c|
+      c.user_id = current_user.id
     end
 
     respond_to do |format|

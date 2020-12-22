@@ -1,29 +1,22 @@
 class DiagnosesController < ApplicationController
   before_action :set_diagnosis, only: [:show, :edit, :update, :destroy]
   before_action :allowed_to_create, only: [:new, :create]
-  
-  # GET /diagnoses
-  # GET /diagnoses.json
+
+
   def index
     @diagnoses = Diagnosis.all
   end
 
-  # GET /diagnoses/1
-  # GET /diagnoses/1.json
   def show
   end
 
-  # GET /diagnoses/new
   def new
     @diagnosis = Diagnosis.new
   end
 
-  # GET /diagnoses/1/edit
   def edit
   end
 
-  # POST /diagnoses
-  # POST /diagnoses.json
   def create
     @diagnosis = Diagnosis.new(diagnosis_params)
 
@@ -38,8 +31,6 @@ class DiagnosesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /diagnoses/1
-  # PATCH/PUT /diagnoses/1.json
   def update
     respond_to do |format|
       if @diagnosis.update(diagnosis_params)
@@ -52,8 +43,6 @@ class DiagnosesController < ApplicationController
     end
   end
 
-  # DELETE /diagnoses/1
-  # DELETE /diagnoses/1.json
   def destroy
     @diagnosis.destroy
     respond_to do |format|
@@ -67,12 +56,11 @@ class DiagnosesController < ApplicationController
     def allowed_to_create
       redirect_to root_path unless current_user.role.in?(['rki'])
     end
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_diagnosis
       @diagnosis = Diagnosis.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def diagnosis_params
       params.require(:diagnosis).permit(:illness)
     end
