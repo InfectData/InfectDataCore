@@ -7,7 +7,7 @@ class CreateCases < ActiveRecord::Migration[6.0]
       t.date :birthdate
       t.string :place_of_residence
       t.string :diagnosis
-      t.references :user, null: false, foreign_key: true
+      t.references :user
       t.datetime :confirmed_at
 
       t.timestamps

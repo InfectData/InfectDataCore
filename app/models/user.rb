@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :cases
-  belongs_to :districts
+  belongs_to :district, optional: true
 
   enum role: [:user, :vip, :admin, :arzt, :labor, :ga, :ls, :rki]
   after_initialize :set_default_role, if: :new_record?
