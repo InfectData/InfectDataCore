@@ -67,12 +67,10 @@ class CasesController < ApplicationController
       redirect_to root_path unless current_user.role.in?(['arzt', 'labor'])
     end
 
-    # Use callbacks to share common setup or constraints between actions.
     def set_case
       @case = Case.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def case_params
       params.require(:case).permit(:first_name, :last_name, :gender,
         :birthdate, :place_of_residence, :diagnosis_id, :user_id, :case_id, :confirmed_at)
