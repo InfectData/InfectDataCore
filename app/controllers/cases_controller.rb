@@ -8,31 +8,22 @@ class CasesController < ApplicationController
     redirect_to cases_path
   end
 
-  # GET /cases
-  # GET /cases.json
   def index
     @cases = current_user.cases
   end
 
-  # GET /cases/1
-  # GET /cases/1.json
   def show
-
   end
 
-  # GET /cases/new
   def new
     @case = Case.new
     @case.user_id = current_user.id
   end
 
-  # GET /cases/1/edit
-  def edit
 
+  def edit
   end
 
-  # POST /cases
-  # POST /cases.json
   def create
     @case = Case.new(case_params) do |c|
       c.user_id = current_user.id
@@ -49,8 +40,6 @@ class CasesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /cases/1
-  # PATCH/PUT /cases/1.json
   def update
     respond_to do |format|
       if @case.update(case_params)
@@ -63,8 +52,6 @@ class CasesController < ApplicationController
     end
   end
 
-  # DELETE /cases/1
-  # DELETE /cases/1.json
   def destroy
     @case.destroy
     respond_to do |format|
