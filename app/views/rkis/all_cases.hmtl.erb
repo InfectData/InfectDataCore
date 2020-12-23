@@ -16,16 +16,16 @@
   </thead>
 
   <tbody>
-    <% @diagnoses.each do |@case| %>
+    <% @all_cases.each do |case_data| %>
       <tr>
         <tr>
-          <td><%= @case.first_name %></td>
-          <td><%= @case.last_name %></td>
-          <td><%= @case.gender %></td>
-          <td><%= @case.birthdate %></td>
-          <td><%= @case.place_of_residence %></td>
-          <td><%= @case.diagnosis.illness %></td>
-          <td><%= @case.confirmed_at %></td>
+          <td><%= case_data.first_name %></td>
+          <td><%= case_data.last_name %></td>
+          <td><%= case_data.gender %></td>
+          <td><%= case_data.birthdate %></td>
+          <td><%= case_data.place_of_residence %></td>
+          <td><%= case_data.diagnosis.illness %></td>
+          <td><%= case_data.confirmed_at %></td>
       </tr>
     <% end %>
   </tbody>
