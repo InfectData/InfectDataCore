@@ -1,34 +1,20 @@
-<h1>All Cases</h1>
+<h1>Diagnosen</h1>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">First name</th>
-      <th scope="col"scope="col">Last name</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Birthdate</th>
-      <th scope="col">Place of residence</th>
-      <th scope="col">Diagnosis</th>
-      <th scope="col">Confirmed at</th>
+      <th scope="col">Krankheit</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @cases.each do |case_data| %>
+    <% @diagnoses.each do |diagnosis_data| %>
       <tr>
-        <td><%= case_data.first_name %></td>
-        <td><%= case_data.last_name %></td>
-        <td><%= case_data.gender %></td>
-        <td><%= case_data.birthdate %></td>
-        <td><%= case_data.place_of_residence %></td>
-        <td><%= case_data.diagnosis.illness %></td>
-        <td><%= case_data.confirmed_at %></td>
-        <td><%= link_to 'Show', case_data %></td>
-        <td><%= link_to 'Edit', edit_case_path(case_data) %></td>
-        <td><%= link_to 'Destroy', case_data, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-       <td><%= link_to 'Confirm', confirm_case_path(case_data), method: :post, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= diagnosis_data.illness %></td>
+        <td><%= link_to 'All Cases', all_cases_rkis_path(diagnosis_data) %></td>
     <% end %>
+
+      </tr>
   </tbody>
 </table>

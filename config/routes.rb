@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
-  resources :rkis
+  resources :rkis do
+    collection do
+      get 'all_cases'
+    end 
+  end
+
   resources :districts
   resources :diagnoses
+
   resources :cases do
     post 'confirm', on: :member
   end

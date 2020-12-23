@@ -9,7 +9,11 @@ class RkisController < ApplicationController
 
 
   def index
-    @cases = Case.all
+    @diagnoses = Diagnosis.all
+  end
+
+  def all_cases
+    @all_cases = Case.where(:case_id == :diagnosis_id)
   end
 
 end
