@@ -13,7 +13,7 @@ class RkisController < ApplicationController
   end
 
   def all_cases
-    @all_cases = Case.where(:case_id == :diagnosis_id)
+    #show all the cases with a specific diagnosis
   end
 
 end
