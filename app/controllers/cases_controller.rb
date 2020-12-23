@@ -25,9 +25,15 @@ class CasesController < ApplicationController
   end
 
   def create
+    #Beide Lösungswege sind möglich, Block und einzeilig:
+    #Weist dem Case automatisch die Current_User ID zu.
     @case = Case.new(case_params) do |c|
       c.user_id = current_user.id
     end
+
+    #Weist dem Case automatisch die District ID des Users zu.
+    #Könnte ggfs. auch mit einem Dropdown im Formular gelöst werden.
+    @case.district = current_user.district
 
     respond_to do |format|
       if @case.save
@@ -72,7 +78,7 @@ class CasesController < ApplicationController
     end
 
     def case_params
-      params.require(:case).permit(:first_name, :last_name, :gender,
-        :birthdate, :place_of_residence, :diagnosis_id, :user_id, :case_id, :confirmed_at)
+      params.require(:case).permit(:first_name, :last_name, :gender,:birthdate, :place_of_residence,
+        :diagnosis_id, :user_id, :case_id, :confirmed_at, :district_id)
     end
 end

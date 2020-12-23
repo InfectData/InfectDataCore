@@ -5,8 +5,11 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th scope="col">Vorname</th>
+      <th scope="col">Nachname</th>
       <th scope="col">Email</th>
-      <th scope="col">Role</th>
+      <th scope="col">Rolle</th>
+      <th scope="col">Bezirk ID</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +17,11 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= user.first_name %></td>
+        <td><%= user.last_name %></td>
         <td><%= user.email %></td>
         <td><%= user.role %></td>
+        <td><%= user.district_id %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

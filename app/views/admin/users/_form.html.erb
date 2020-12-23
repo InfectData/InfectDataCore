@@ -41,6 +41,11 @@
     <%= form.select :role, options_for_select([:admin, :arzt, :labor, :ga, :ls, :rki]) %>
   </div>
 
+  <div class="field">
+    <%= form.label :district %>
+    <%= form.collection_select :district_id, District.all, :id, :name, :prompt => true %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
