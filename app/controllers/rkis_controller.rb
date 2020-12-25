@@ -13,7 +13,8 @@ class RkisController < ApplicationController
   end
 
   def all_cases
-    #show all the cases with a specific diagnosis
+    #Alle Fälle zur Auswahl einer Diagnose
+    @diagnosis = Diagnosis.includes(:cases).find_by(id: params[:id])
   end
 
 end

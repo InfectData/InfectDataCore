@@ -1,4 +1,4 @@
-    <h1>Alle Fälle zur Diagnose: <%=  %></h1>
+    <h1>Alle Fälle zur Diagnose: <%= @diagnosis.illness %></h1>
 
 
 <table class="table table-striped">
@@ -16,7 +16,7 @@
   </thead>
 
   <tbody>
-    <% @all_cases.each do |case_data| %>
+    <% @diagnosis.cases.each do |case_data| %>
       <tr>
         <tr>
           <td><%= case_data.first_name %></td>
