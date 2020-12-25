@@ -1,32 +1,32 @@
-    <h1>Alle Fälle zur Diagnose: <%= @diagnosis.illness %></h1>
+<h1>Alle Fälle zur Diagnose: <%= @diagnosis.illness %></h1>
 
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">First name</th>
-      <th scope="col"scope="col">Last name</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Birthdate</th>
-      <th scope="col">Place of residence</th>
-      <th scope="col">Diagnosis</th>
-      <th scope="col">Confirmed at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @diagnosis.cases.each do |case_data| %>
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <tr>
-          <td><%= case_data.first_name %></td>
-          <td><%= case_data.last_name %></td>
-          <td><%= case_data.gender %></td>
-          <td><%= case_data.birthdate %></td>
-          <td><%= case_data.place_of_residence %></td>
-          <td><%= case_data.diagnosis.illness %></td>
-          <td><%= case_data.confirmed_at %></td>
+        <th scope="col">First name</th>
+        <th scope="col"scope="col">Last name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Birthdate</th>
+        <th scope="col">Place of residence</th>
+        <th scope="col">Diagnosis</th>
+        <th scope="col">Confirmed at</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @diagnosis.cases.each do |case_data| %>
+        <tr>
+          <tr>
+            <td><%= case_data.first_name %></td>
+            <td><%= case_data.last_name %></td>
+            <td><%= case_data.gender %></td>
+            <td><%= case_data.birthdate %></td>
+            <td><%= case_data.place_of_residence %></td>
+            <td><%= case_data.diagnosis.illness %></td>
+            <td><%= case_data.confirmed_at %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
