@@ -12,7 +12,7 @@
     <% @diagnoses.each do |diagnosis_data| %>
       <tr>
         <td><%= diagnosis_data.illness %></td>
-        <td><%= link_to 'All Cases', all_cases_rkis_path(diagnosis_data) %></td>
+        <td><%= link_to 'All Cases', cases_diagnosis_path(diagnosis_data) %></td>
     <% end %>
 
       </tr>

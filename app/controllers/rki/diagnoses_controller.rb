@@ -1,4 +1,4 @@
-class Rki::RkiController < ApplicationController
+class Rki::DiagnosesController < ApplicationController
   before_action :authenticate_user!
   before_action :current_user_rki?
 
@@ -11,7 +11,7 @@ class Rki::RkiController < ApplicationController
     @diagnoses = Diagnosis.all
   end
 
-  def all_cases
+  def cases
     #Alle Fälle zur Auswahl einer Diagnose
     @diagnosis = Diagnosis.includes(:cases).find_by(id: params[:id])
   end
