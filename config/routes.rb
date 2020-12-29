@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :rkis do
-    collection do
-      get 'all_cases'
-    end 
+  scope '/rki', module: :rki do
+    resources :diagnoses, only: :index do
+      get 'cases', on: :member
+    end
   end
 
   resources :districts

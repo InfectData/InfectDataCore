@@ -1,4 +1,4 @@
-class RkisController < ApplicationController
+class Rki::RkiController < ApplicationController
   before_action :authenticate_user!
   before_action :current_user_rki?
 
@@ -6,7 +6,6 @@ class RkisController < ApplicationController
     return if current_user.role == 'rki'
     redirect_to root_path
   end
-
 
   def index
     @diagnoses = Diagnosis.all
