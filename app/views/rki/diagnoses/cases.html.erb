@@ -18,7 +18,6 @@
     <tbody>
       <% @diagnosis.cases.each do |case_data| %>
         <tr>
-          <tr>
             <td><%= case_data.first_name %></td>
             <td><%= case_data.last_name %></td>
             <td><%= case_data.gender %></td>
@@ -28,5 +27,65 @@
             <td><%= case_data.confirmed_at %></td>
         </tr>
       <% end %>
+
     </tbody>
   </table>
+
+  <hr>
+  <br>
+  
+  <!-- Statistik einfügen-->
+  <div class="card-group">
+
+    <!-- District -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total cases by districts</h5>
+        <p><%= District.find(1).name%> (<%= Case.where('District_ID =?', 1).count %>)</p>
+        <p><%= District.find(2).name%> (<%= Case.where('District_ID =?', 2).count %>)</p>
+        <p><%= District.find(3).name%> (<%= Case.where('District_ID =?', 3).count %>)</p>
+      </div>
+    </div>
+
+    <!-- Today -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total cases today (<%= Case.where('created_at >=?', Date.today).count %>)</h5>
+      </div>
+    </div>
+
+    <!-- Week -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Total cases of the last seven days (<%= Case.where('created_at >=?', 1.week.ago).count %>)</h5>
+        <div class ="table-responsive">
+          <table class="card-table table">
+            <thead>
+              <tr>
+                <th scope="col">First name</th>
+                <th scope="col"scope="col">Last name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Birthdate</th>
+                <th scope="col">Place of residence</th>
+                <th scope="col">Diagnosis</th>
+                <th scope="col">Confirmed at</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% Case.where('created_at >=?', 1.week.ago).each do |case_week| %>
+                <tr>
+                  <td><%= case_week.first_name %></td>
+                  <td><%= case_week.last_name %></td>
+                  <td><%= case_week.gender %></td>
+                  <td><%= case_week.birthdate %></td>
+                  <td><%= case_week.place_of_residence %></td>
+                  <td><%= case_week.diagnosis.illness %></td>
+                  <td><%= case_week.confirmed_at %></td>
+                </tr>
+              <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
