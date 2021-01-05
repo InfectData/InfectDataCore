@@ -38,6 +38,15 @@
   <h4 style="text-align:center;">Total cases by / within </h4>
   <div class="card-group">
 
+    <!-- Confirmed -->
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Confirmed and unconfirmed</h5>
+        <p>Unconfirmed: <%= unconfirmed_cases = @diagnosis.cases.unconfirmed.where(created_at: Date.today.all_day).count %></p>
+        <p>Confirmed: <%= confirmed_cases = @diagnosis.cases.confirmed.where(created_at: Date.today.all_day).count %></p>
+      </div>
+    </div>
+
     <!-- District -->
     <div class="card">
       <div class="card-body">
