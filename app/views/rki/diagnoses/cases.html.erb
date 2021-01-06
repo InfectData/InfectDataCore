@@ -4,8 +4,6 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col">First name</th>
-        <th scope="col"scope="col">Last name</th>
         <th scope="col">Gender</th>
         <th scope="col">Birthdate</th>
         <th scope="col">Place of residence</th>
@@ -18,8 +16,6 @@
     <tbody>
       <% @diagnosis.cases.each do |case_data| %>
         <tr>
-            <td><%= case_data.first_name %></td>
-            <td><%= case_data.last_name %></td>
             <td><%= case_data.gender %></td>
             <td><%= case_data.birthdate %></td>
             <td><%= case_data.place_of_residence %></td>
@@ -79,8 +75,6 @@
           <table class="card-table table">
             <thead>
               <tr>
-                <th scope="col">First name</th>
-                <th scope="col"scope="col">Last name</th>
                 <th scope="col">Gender</th>
                 <th scope="col">Birthdate</th>
                 <th scope="col">Place of residence</th>
@@ -92,8 +86,6 @@
             <tbody>
               <% Case.where('created_at >=?', 1.week.ago).each do |case_week| %>
                 <tr>
-                  <td><%= case_week.first_name %></td>
-                  <td><%= case_week.last_name %></td>
                   <td><%= case_week.gender %></td>
                   <td><%= case_week.birthdate %></td>
                   <td><%= case_week.place_of_residence %></td>
