@@ -47,30 +47,30 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">District</h5>
-        <p><%= District.find(1).name%> (<%= Case.where('District_ID =?', 1).count %>)</p>
-        <p><%= District.find(2).name%> (<%= Case.where('District_ID =?', 2).count %>)</p>
-        <p><%= District.find(3).name%> (<%= Case.where('District_ID =?', 3).count %>)</p>
+        <p><%= District.find(1).name%> (<%= @diagnosis.cases.where('District_ID =?', 1).count %>)</p>
+        <p><%= District.find(2).name%> (<%= @diagnosis.cases.where('District_ID =?', 2).count %>)</p>
+        <p><%= District.find(3).name%> (<%= @diagnosis.cases.where('District_ID =?', 3).count %>)</p>
       </div>
     </div>
 
     <!-- Today -->
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Today (<%= Case.where('created_at >=?', Date.today).count %>)</h5>
+        <h5 class="card-title">Today (<%= @diagnosis.cases.where('created_at >=?', Date.today).count %>)</h5>
       </div>
     </div>
 
     <!-- 24h -->
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Last 24 hours (<%= Case.where('created_at >=?', 24.hours.ago).count %>)</h5>
+        <h5 class="card-title">Last 24 hours (<%= @diagnosis.cases.where('created_at >=?', 24.hours.ago).count %>)</h5>
       </div>
     </div>
 
     <!-- Week -->
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Last seven days (<%= Case.where('created_at >=?', 1.week.ago).count %>)</h5>
+        <h5 class="card-title">Last seven days (<%= @diagnosis.cases.where('created_at >=?', 1.week.ago).count %>)</h5>
         <div class ="table-responsive">
           <table class="card-table table">
             <thead>
@@ -84,7 +84,7 @@
             </thead>
 
             <tbody>
-              <% Case.where('created_at >=?', 1.week.ago).each do |case_week| %>
+              <% @diagnosis.cases.where('created_at >=?', 1.week.ago).each do |case_week| %>
                 <tr>
                   <td><%= case_week.gender %></td>
                   <td><%= case_week.birthdate %></td>
