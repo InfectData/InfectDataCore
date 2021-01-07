@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_23_093059) do
+ActiveRecord::Schema.define(version: 2021_01_07_125842) do
 
   create_table "cases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "first_name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_12_23_093059) do
     t.string "diagnosis"
     t.bigint "user_id"
     t.datetime "confirmed_at"
-    t.datetime "created_at", precision: 6, null: false
+    t.datetime "created_at", precision: 6
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "diagnosis_id"
     t.bigint "district_id"

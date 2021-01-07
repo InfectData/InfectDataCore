@@ -41,11 +41,6 @@
     <%= form.collection_select :diagnosis_id, Diagnosis.all, :id, :illness, :prompt => true %>
   </div>
 
-  <div class="field">
-    <%= form.label :confirmed_at %>
-    <%= form.datetime_select :confirmed_at %>
-  </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>
