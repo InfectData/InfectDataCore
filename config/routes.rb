@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  scope '/ga', module: :ga do
+    resources :districts
+  end
+
   scope '/ls', module: :ls do
     resources :reports
   end

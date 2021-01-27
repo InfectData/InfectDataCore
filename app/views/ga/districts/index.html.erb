@@ -1,0 +1,26 @@
+<h1>Total cases for <%= @district.name %> </h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Gender</th>
+      <th scope="col">Birthdate</th>
+      <th scope="col">Place of residence</th>
+      <th scope="col">Diagnosis</th>
+      <th scope="col">Confirmed at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @district.cases.each do |case_data| %>
+      <tr>
+          <td><%= case_data.gender %></td>
+          <td><%= case_data.birthdate %></td>
+          <td><%= case_data.place_of_residence %></td>
+          <td><%= case_data.diagnosis.illness %></td>
+          <td><%= case_data.confirmed_at %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
