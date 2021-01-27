@@ -48,8 +48,8 @@
       <div class="card-body">
         <h5 class="card-title">District</h5>
         <p><%= District.find(1).name%> (<%= @diagnosis.cases.where('District_ID =?', 1).count %>)</p>
-        <p><%= District.find(2).name%> (<%= @diagnosis.cases.where('District_ID =?', 2).count %>)</p>
-        <p><%= District.find(3).name%> (<%= @diagnosis.cases.where('District_ID =?', 3).count %>)</p>
+        <!--<p><#%= District.find(2).name%> (<#%= @diagnosis.cases.where('District_ID =?', 2).count %>)</p>
+        <p><#%= District.find(3).name%> (<#%= @diagnosis.cases.where('District_ID =?', 3).count %>)</p>-->
       </div>
     </div>
 
