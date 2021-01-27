@@ -46,6 +46,11 @@
     <%= form.collection_select :district_id, District.all, :id, :name, :prompt => true %>
   </div>
 
+  <div class="field">
+    <%= form.label :state %>
+    <%= form.collection_select :state_id, State.all, :id, :titel, :prompt => true %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

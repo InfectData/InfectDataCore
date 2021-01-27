@@ -57,6 +57,6 @@ class Admin::UsersController < Admin::AdminController
 
       # Erlaubt diese Liste an Parametern
       def user_params
-        params.require(:user).permit(:email,:password, :password_confirmation, :role, :first_name, :last_name, :district_id, :user_id)
+        params.require(:user).permit(:email,:password, :password_confirmation, :role, :first_name, :last_name, :district_id, :user_id, :state_id)
       end
 end
