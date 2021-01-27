@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  scope '/ls', module: :ls do
+    resources :reports
+  end
+
   scope '/rki', module: :rki do
     resources :diagnoses, only: :index do
       get 'cases', on: :member
