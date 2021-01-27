@@ -8,7 +8,7 @@ class Ga::DistrictsController < ApplicationController
   end
 
   def index
-    @district = District.includes(:cases).where(id: 1).first
+    @district = District.includes(:cases).find(current_user.district_id)
   end
 
 end
