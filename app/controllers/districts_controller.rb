@@ -63,6 +63,6 @@ class DistrictsController < ApplicationController
 
 
     def district_params
-      params.require(:district).permit(:name, :place, :postal_code)
+      params.require(:district).permit(:name, :place, :postal_code, :state_id)
     end
 end

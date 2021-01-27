@@ -8,6 +8,7 @@
       <th>Name</th>
       <th>Place</th>
       <th>Postal code</th>
+      <th>State</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= district.name %></td>
         <td><%= district.place %></td>
         <td><%= district.postal_code %></td>
+        <td><%= district.state.titel %></td>
         <td><%= link_to 'Show', district %></td>
         <td><%= link_to 'Edit', edit_district_path(district) %></td>
         <td><%= link_to 'Destroy', district, method: :delete, data: { confirm: 'Are you sure?' } %></td>

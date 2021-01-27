@@ -26,6 +26,11 @@
     <%= form.number_field :postal_code %>
   </div>
 
+  <div class="field">
+    <%= form.label :state_id %>
+    <%= form.collection_select :state_id, State.all, :id, :titel, :promz => true %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
