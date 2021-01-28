@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :cases
+  has_many :reports
   belongs_to :district, optional: true
   belongs_to :state
 
