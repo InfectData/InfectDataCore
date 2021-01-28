@@ -8,7 +8,8 @@ class Ga::DistrictsController < ApplicationController
   end
 
   def index
-    @district = District.includes(:cases).find(current_user.district_id)
+    @district = District.find(current_user.district_id)
+    @cases = @district.cases.confirmed
   end
 
 end
