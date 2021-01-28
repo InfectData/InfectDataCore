@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'report/new'
+  get 'report/index'
   scope '/ga', module: :ga do
     resources :districts
   end
