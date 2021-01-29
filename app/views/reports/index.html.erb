@@ -1,2 +1,26 @@
-<h1>Report#index</h1>
-<p>Find me in app/views/report/index.html.erb</p>
+<h1>Total Reports</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"scope="col">District ID</th>
+      <th scope="col">User ID</th>
+      <th scope="col">Comment</th>
+      <th scope="col">Date</th>
+      <th scope="col">Created at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+          <td><%= report.district_id %></td>
+          <td><%= report.user_id %></td>
+          <td><%= report.comment %></td>
+          <td><%= report.date %></td>
+          <td><%= report.created_at %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
