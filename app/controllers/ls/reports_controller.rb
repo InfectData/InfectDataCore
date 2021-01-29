@@ -8,7 +8,7 @@ class Ls::ReportsController < ApplicationController
   end
 
   def index
-    
+    @reports = Reports.where(district_id: current_user.district_id)
   end
 
 end

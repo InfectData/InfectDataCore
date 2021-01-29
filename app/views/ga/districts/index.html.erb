@@ -10,6 +10,8 @@
       <th scope="col">Place of residence</th>
       <th scope="col">Diagnosis</th>
       <th scope="col">Confirmed at</th>
+      <th scope="col">Created at</th>
+      <th scope="col">Report_ID</th>
     </tr>
   </thead>
 
@@ -23,10 +25,12 @@
           <td><%= case_data.place_of_residence %></td>
           <td><%= case_data.diagnosis.illness %></td>
           <td><%= case_data.confirmed_at %></td>
+          <td><%= case_data.created_at %></td>
+          <td><%= case_data.report_id %></td>
       </tr>
     <% end %>
 
   </tbody>
 </table>
 
-<button><%= link_to 'New Report', report_new_path %></button>
+<button><%= link_to 'New Report', new_report_path %></button>
