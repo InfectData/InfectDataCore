@@ -9,9 +9,6 @@ class ReportsController < ApplicationController
     @reports = current_user.reports
   end
 
-  def show
-  end
-
   def create
 
     #Weist dem Report automatisch die Current_User ID & District ID zu.
@@ -20,8 +17,8 @@ class ReportsController < ApplicationController
       r.district_id = current_user.district_id
     end
 
-    #Scope unconfimred und auf district begrenzen, Zeitraum eingrenzen
-    @cases = Case.unconfirmed.where(district_id: current_user.district_id,created_at: @report.date.beginning_of_day..@report.date.end_of_day)
+    #Alle bestätigten Fälle, die zum Bezirk des Nutzers gehören & Zeitraum eingrenzen
+    @cases = Case.confirmed.where(district_id: current_user.district_id, report_id: nil, created_at: @report.date.beginning_of_day..@report.date.end_of_day)
 
     respond_to do |format|
       if @report.save
