@@ -17,7 +17,6 @@ class CasesController < ApplicationController
 
   def new
     @case = Case.new
-    @case.user_id = current_user.id
   end
 
 
@@ -25,11 +24,8 @@ class CasesController < ApplicationController
   end
 
   def create
-    #Beide Lösungswege sind möglich, Block und einzeilig:
     #Weist dem Case automatisch die Current_User ID zu.
-    @case = Case.new(case_params) do |c|
-      c.user_id = current_user.id
-    end
+    @case.user_id = current_user.id
 
     #Weist dem Case automatisch die District ID des Users zu.
     #Könnte ggfs. auch mit einem Dropdown im Formular gelöst werden.
