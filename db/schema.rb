@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_100706) do
+ActiveRecord::Schema.define(version: 2021_02_11_140244) do
 
   create_table "cases", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "first_name"
@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(version: 2021_01_28_100706) do
     t.bigint "diagnosis_id"
     t.bigint "district_id"
     t.bigint "report_id"
+    t.string "pseud"
     t.index ["diagnosis_id"], name: "index_cases_on_diagnosis_id"
     t.index ["district_id"], name: "index_cases_on_district_id"
+    t.index ["pseud"], name: "index_cases_on_pseud"
     t.index ["report_id"], name: "index_cases_on_report_id"
     t.index ["user_id"], name: "index_cases_on_user_id"
   end
