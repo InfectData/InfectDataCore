@@ -9,7 +9,11 @@ class CasesController < ApplicationController
   end
 
   def index
-    @cases = current_user.cases
+    if params[:query].present?
+      @cases = Case.where(pseud: params[:query]) #zusätzlich noch alle Fälle vom erstellten Nutzer?
+    else
+      @cases = current_user.cases
+    end
   end
 
   def show
