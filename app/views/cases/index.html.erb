@@ -4,8 +4,8 @@
 
 <%= form_for cases_path, method: :get do %>
   <p>
-    <%= text_field_tag 'query' %>
-    <%= submit_tag 'submit', value: "", class: "btn btn-primary"%>
+    <%= text_field_tag 'query', params[:query] %>
+    <%= submit_tag 'Suchen', class: "btn btn-primary", name: nil %>
   </p>
 <% end %>
 
