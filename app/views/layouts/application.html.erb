@@ -22,14 +22,14 @@
         <%= render 'layouts/navigation_al'%>
       <%elsif current_user.role == 'admin'%>
         <%= render 'layouts/navigation_admin'%>
-        <%elsif current_user.role == 'ga'%>
-          <%= render 'layouts/navigation_ga'%>
-          <%elsif current_user.role == 'ls'%>
-            <%= render 'layouts/navigation_ls'%>
+      <%elsif current_user.role == 'ga'%>
+        <%= render 'layouts/navigation_ga'%>
+      <%elsif current_user.role == 'ls'%>
+        <%= render 'layouts/navigation_ls'%>
       <%elsif current_user.role == 'rki'%>
         <%= render 'layouts/navigation_rki'%>
-        <%elsif current_user.role == 'user'%>
-          <%= render 'layouts/navigation_user'%>
+      <%elsif current_user.role == 'user'%>
+        <%= render 'layouts/navigation_user'%>
       <% end %>
     <% end %>
 
