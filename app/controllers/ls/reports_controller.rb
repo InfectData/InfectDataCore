@@ -10,6 +10,7 @@ class Ls::ReportsController < ApplicationController
   def index
     @districts = current_user.state.districts.map{|district| district.id}
     @reports = Report.where(district_id: @districts)
+    @cases = Case.confirmed.where(district_id: @districts)
   end
 
 end
