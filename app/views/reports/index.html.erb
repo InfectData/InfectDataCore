@@ -8,6 +8,7 @@
       <th scope="col">Comment</th>
       <th scope="col">Date</th>
       <th scope="col">Created at</th>
+      <th scope="col">Number of cases</th>
     </tr>
   </thead>
 
@@ -19,6 +20,7 @@
           <td><%= report.comment %></td>
           <td><%= report.date %></td>
           <td><%= report.created_at %></td>
+          <td><%= report.cases.count %></td>
       </tr>
     <% end %>
 
