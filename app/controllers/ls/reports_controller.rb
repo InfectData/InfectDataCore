@@ -8,7 +8,8 @@ class Ls::ReportsController < ApplicationController
   end
 
   def index
-    @reports = Reports.where(district_id: current_user.district_id)
+    @districts = current_user.state.districts.map{|district| district.id}
+    @reports = Report.where(district_id: @districts)
   end
 
 end

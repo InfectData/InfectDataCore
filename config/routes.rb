@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :reports
-
   scope '/ga', module: :ga do
     resources :districts
   end
@@ -16,6 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :reports
   resources :districts
   resources :diagnoses
 
