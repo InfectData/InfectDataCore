@@ -12,7 +12,7 @@ class CasesController < ApplicationController
     if params[:query].present?
       @cases = Case.where(pseud: params[:query]) #zusätzlich noch alle Fälle vom erstellten Nutzer?
     else
-      @cases = current_user.cases
+      @cases = current_user.cases.where(report_id: nil)
     end
   end
 
