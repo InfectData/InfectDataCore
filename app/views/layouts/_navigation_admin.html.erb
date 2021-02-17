@@ -14,10 +14,10 @@
         <a class="nav-link" <%= link_to 'New User', new_user_path %></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" <%= link_to 'All Districts', districts_path%></a>
+        <a class="nav-link" <%= link_to 'All Districts', '/districts'%></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" <%= link_to 'New District', new_district_path %></a>
+        <a class="nav-link" <%= link_to 'New District', '/districts/new' %></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" <%= link_to 'Sign out', destroy_user_session_path, method: :delete %></a>
