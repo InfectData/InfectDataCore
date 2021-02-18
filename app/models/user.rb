@@ -4,7 +4,7 @@ class User < ApplicationRecord
   belongs_to :district, optional: true
   belongs_to :state
 
-  enum role: [:user, :vip, :admin, :arzt, :labor, :ga, :ls, :rki]
+  enum role: [:user, :rki, :admin, :arzt, :labor, :ga, :ls]
   after_initialize :set_default_role, if: :new_record?
 
    def set_default_role
