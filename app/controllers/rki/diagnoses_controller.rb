@@ -14,6 +14,7 @@ class Rki::DiagnosesController < ApplicationController
   def cases
     #Alle Fälle zur Auswahl einer Diagnose
     @diagnosis = Diagnosis.includes(:cases).find_by(id: params[:id])
+    @states = State.all
   end
 
 end
