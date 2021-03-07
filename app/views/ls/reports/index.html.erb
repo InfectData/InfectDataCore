@@ -30,7 +30,7 @@
 <!-- Confirmed -->
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title"> Total number of confirmed cases for <%= current_user.state.titel %></h5>
-    <h6><%= @cases.count %></h6>
+    <h5 class="card-title"> Today total number of confirmed cases for <%= current_user.state.titel %></h5>
+    <h6><%= @cases.confirmed.where('created_at >=?', Date.today).count %></h6>
   </div>
 </div>
