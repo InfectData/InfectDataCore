@@ -73,7 +73,7 @@ class CasesController < ApplicationController
 
     #Schränkt den Zugriff für Ärzte und Labore ein
     def allowed_to_create
-      redirect_to root_path unless current_user.role.in?(['arzt', 'labor'])
+      redirect_to root_path unless current_user.role.in?(['arzt', 'labor', 'ga'])
     end
 
     def set_case
