@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Cases</h1>
+<h1>All Cases</h1>
 
 <%= form_for cases_path, method: :get do %>
-  <p>
+  <p class="text-right">
+    <%= 'Pseudonymization: '%>
     <%= text_field_tag 'query', params[:query] %>
-    <%= submit_tag 'Suchen', class: "btn btn-primary", name: nil %>
+    <%= submit_tag 'Suchen', class: "btn btn-secondary", name: nil %>
   </p>
 <% end %>
 
