@@ -31,6 +31,8 @@
       <%elsif current_user.role == 'user'%>
         <%= render 'layouts/navigation_user'%>
       <% end %>
+    <% else %>
+        <%= render 'layouts/navigation'%>
     <% end %>
 
     <div class= "container">
