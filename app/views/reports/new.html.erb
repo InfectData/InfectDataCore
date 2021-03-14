@@ -1,6 +1,6 @@
 <h1>New Report</h1>
 
-<%= form_for @report do |form| %>
+<%= form_for @report, url: '/reports' do |form| %>
   <% if @report.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@report.errors.count, "error") %> prohibited this case from being saved:</h2>
