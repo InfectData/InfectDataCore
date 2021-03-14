@@ -6,7 +6,7 @@ class State < ApplicationRecord
   default_scope { order(titel: :asc) }
 
   def total_cases(date = Date.today)
-    @reports = Report.where(district_id: district_ids)
+    @reports = Report.where(district_id: district_ids, date: date)
     @total_cases = @reports.map{|r| r.cases.count}.sum
     @total_cases
   end
