@@ -18,7 +18,7 @@ class ReportsController < ApplicationController
     end
 
     #Alle bestätigten Fälle, die zum Bezirk des Nutzers gehören & Zeitraum eingrenzen
-    @cases = Case.confirmed.where(district_id: current_user.district_id, report_id: nil, created_at: @report.date.beginning_of_day..@report.date.end_of_day)
+    @cases = Case.confirmed.where(district_id: current_user.district_id, diagnosis_id: @report.diagnosis_id ,report_id: nil, created_at: @report.date.beginning_of_day..@report.date.end_of_day)
 
     respond_to do |format|
       if @report.save
@@ -44,6 +44,6 @@ private
   end
 
   def report_params
-    params.require(:report).permit(:comment, :date, :created_at, :updated_at, :user_id, :district_id)
+    params.require(:report).permit(:comment, :date, :created_at, :updated_at, :user_id, :district_id, :diagnosis_id)
   end
 end

@@ -23,6 +23,11 @@
     <%= form.date_select :date %>
   </div>
 
+  <div class="field">
+    <%= form.label :diagnosis_id %>
+    <%= form.select :diagnosis_id, options_for_select(Diagnosis.all.map{|diagnosis| [diagnosis.illness, diagnosis.id]}, @report.diagnosis_id) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

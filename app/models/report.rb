@@ -1,6 +1,6 @@
 class Report < ApplicationRecord
   belongs_to :district
   belongs_to :user
+  belongs_to :diagnosis
   has_many :cases
-  has_many :diagnosis, through: :cases
 end
