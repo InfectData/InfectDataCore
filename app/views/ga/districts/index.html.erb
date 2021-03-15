@@ -1,36 +1,38 @@
 <h1>Total cases for <%= @district.name %> </h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">First name</th>
-      <th scope="col"scope="col">Last name</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Birthdate</th>
-      <th scope="col">Place of residence</th>
-      <th scope="col">Diagnosis</th>
-      <th scope="col">Confirmed at</th>
-      <th scope="col">Created at</th>
-      <th scope="col">Report_ID</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cases.each do |case_data| %>
+<div class="table-responive" style="height: 500px !important; overflow: scroll;">
+  <table class="table table-striped">
+    <thead style="position: sticky; top: 0; background: white;">
       <tr>
-          <td><%= case_data.first_name %></td>
-          <td><%= case_data.last_name %></td>
-          <td><%= case_data.gender %></td>
-          <td><%= case_data.birthdate %></td>
-          <td><%= case_data.place_of_residence %></td>
-          <td><%= case_data.diagnosis.illness %></td>
-          <td><%= case_data.confirmed_at %></td>
-          <td><%= case_data.created_at %></td>
-          <td><%= case_data.report_id %></td>
+        <th scope="col">First name</th>
+        <th scope="col"scope="col">Last name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Birthdate</th>
+        <th scope="col">Place of residence</th>
+        <th scope="col">Diagnosis</th>
+        <th scope="col">Confirmed at</th>
+        <th scope="col">Created at</th>
+        <th scope="col">Report_ID</th>
       </tr>
-    <% end %>
+    </thead>
 
-  </tbody>
-</table>
+    <tbody>
+      <% @cases.each do |case_data| %>
+        <tr>
+            <td><%= case_data.first_name %></td>
+            <td><%= case_data.last_name %></td>
+            <td><%= case_data.gender %></td>
+            <td><%= case_data.birthdate %></td>
+            <td><%= case_data.place_of_residence %></td>
+            <td><%= case_data.diagnosis.illness %></td>
+            <td><%= case_data.confirmed_at %></td>
+            <td><%= case_data.created_at %></td>
+            <td><%= case_data.report_id %></td>
+        </tr>
+      <% end %>
 
+    </tbody>
+  </table>
+</div>
+<br>
 <button><%= link_to 'New Report', '/reports/new' %></button>

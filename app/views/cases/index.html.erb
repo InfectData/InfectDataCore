@@ -10,37 +10,39 @@
   </p>
 <% end %>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Pseudonymization</th>
-      <th scope="col">First name</th>
-      <th scope="col"scope="col">Last name</th>
-      <th scope="col">Gender</th>
-      <th scope="col">Birthdate</th>
-      <th scope="col">Place of residence</th>
-      <th scope="col">Diagnosis</th>
-      <th scope="col">Confirmed at</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cases.each do |case_data| %>
+<div class="table-responive" style="height: 500px !important; overflow: scroll;">
+  <table class="table table-striped">
+    <thead style="position: sticky; top: 0; background: white;">
       <tr>
-        <td><%= case_data.pseud %></td>
-        <td><%= case_data.first_name %></td>
-        <td><%= case_data.last_name %></td>
-        <td><%= case_data.gender %></td>
-        <td><%= case_data.birthdate %></td>
-        <td><%= case_data.place_of_residence %></td>
-        <td><%= case_data.diagnosis.illness %></td>
-        <td><%= case_data.confirmed_at %></td>
-        <td><%= link_to 'Show', case_data %></td>
-        <td><%= link_to 'Edit', edit_case_path(case_data) %></td>
-        <td><%= link_to 'Destroy', case_data, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Confirm', confirm_case_path(case_data), method: :post, data: { confirm: 'Are you sure?' } %></td>
+        <th scope="col">Pseud.</th>
+        <th scope="col">Firstname</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Birthdate</th>
+        <th scope="col">Place of residence</th>
+        <th scope="col">Diagnosis</th>
+        <th scope="col">Confirmed at</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @cases.each do |case_data| %>
+        <tr>
+          <td><%= case_data.pseud %></td>
+          <td><%= case_data.first_name %></td>
+          <td><%= case_data.last_name %></td>
+          <td><%= case_data.gender %></td>
+          <td><%= case_data.birthdate %></td>
+          <td><%= case_data.place_of_residence %></td>
+          <td><%= case_data.diagnosis.illness %></td>
+          <td><%= case_data.confirmed_at %></td>
+          <td><%= link_to 'Show', case_data %></td>
+          <td><%= link_to 'Edit', edit_case_path(case_data) %></td>
+          <td><%= link_to 'Destroy', case_data, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Confirm', confirm_case_path(case_data), method: :post, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

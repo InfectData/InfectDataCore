@@ -1,12 +1,12 @@
 <div class="jumbotron">
   <div class="container">
-    <h2>Willkommen <small class="text-muted">bei InfectData</small></h2>
+    <h2>Welcome <small class="text-muted">to InfectData</small></h2>
     <% t = Time.now %>
     <% if t >= 12%>
-        <p><%= 'Guten Abend,'%> <%= current_user.first_name %> <%= current_user.last_name %>.
+        <p><%= 'Good evening,'%> <%= current_user.first_name %> <%= current_user.last_name %>.
       <% else %>
-          <%= 'Guten Tag,'%> <%= current_user.first_name %> <%= current_user.last_name %>.
+          <%= 'Hello,'%> <%= current_user.first_name %> <%= current_user.last_name %>.
     <% end %><br>
-    <small>Ihre Rolle: "<%= current_user.role %>".</small></p>
+    <small>Your Role: "<%= current_user.role %>".</small></p>
   </div>
 </div>

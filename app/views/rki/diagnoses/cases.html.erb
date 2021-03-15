@@ -1,8 +1,9 @@
 <h1>Total cases of <%= @diagnosis.illness %></h1>
 
 
+<div class="table-responive" style="height: 500px !important; overflow: scroll;">
   <table class="table table-striped">
-    <thead>
+    <thead style="position: sticky; top: 0; background: white;">
       <tr>
         <th scope="col">Pseud.</th>
         <th scope="col">Gender</th>
@@ -28,7 +29,7 @@
 
     </tbody>
   </table>
-
+</div>
   <hr>
   <br>
 
@@ -74,32 +75,32 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Last seven days (<%= @diagnosis.cases.where('created_at >=?', 1.week.ago).count %>)</h5>
-        <div class ="table-responsive">
-          <table class="card-table table">
-            <thead>
-              <tr>
-                <th scope="col">Pseud.</th>
-                <th scope="col">Gender</th>
-                <th scope="col">Birthdate</th>
-                <th scope="col">Place of residence</th>
-                <th scope="col">Diagnosis</th>
-                <th scope="col">Confirmed at</th>
-              </tr>
-            </thead>
-
-            <tbody>
-              <% @diagnosis.cases.where('created_at >=?', 1.week.ago).each do |case_week| %>
+          <div class="table-responive" style="height: 500px !important; overflow: scroll;">
+            <table class="table table-striped">
+              <thead style="position: sticky; top: 0; background: white;">
                 <tr>
-                  <td><%= case_week.pseud %></td>
-                  <td><%= case_week.gender %></td>
-                  <td><%= case_week.birthdate %></td>
-                  <td><%= case_week.place_of_residence %></td>
-                  <td><%= case_week.diagnosis.illness %></td>
-                  <td><%= case_week.confirmed_at %></td>
+                  <th scope="col">Pseud.</th>
+                  <th scope="col">Gender</th>
+                  <th scope="col">Birthdate</th>
+                  <th scope="col">Place of residence</th>
+                  <th scope="col">Diagnosis</th>
+                  <th scope="col">Confirmed at</th>
                 </tr>
-              <% end %>
-        </div>
+              </thead>
+
+              <tbody>
+                <% @diagnosis.cases.where('created_at >=?', 1.week.ago).each do |case_week| %>
+                  <tr>
+                    <td><%= case_week.pseud %></td>
+                    <td><%= case_week.gender %></td>
+                    <td><%= case_week.birthdate %></td>
+                    <td><%= case_week.place_of_residence %></td>
+                    <td><%= case_week.diagnosis.illness %></td>
+                    <td><%= case_week.confirmed_at %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
       </div>
     </div>
-
-  </div>

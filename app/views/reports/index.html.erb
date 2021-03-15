@@ -1,24 +1,26 @@
 <h1>Total Reports</h1>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Comment</th>
-      <th scope="col">Date</th>
-      <th scope="col">Created at</th>
-      <th scope="col">Number of cases</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @reports.each do |report| %>
+<div class="table-responive" style="height: 500px !important; overflow: scroll;">
+  <table class="table table-striped">
+    <thead style="position: sticky; top: 0; background: white;">
       <tr>
-          <td><%= report.comment %></td>
-          <td><%= report.date %></td>
-          <td><%= report.created_at %></td>
-          <td><%= report.cases.count %></td>
+        <th scope="col">Comment</th>
+        <th scope="col">Date</th>
+        <th scope="col">Created at</th>
+        <th scope="col">Number of cases</th>
       </tr>
-    <% end %>
+    </thead>
 
-  </tbody>
-</table>
+    <tbody>
+      <% @reports.each do |report| %>
+        <tr>
+            <td><%= report.comment %></td>
+            <td><%= report.date %></td>
+            <td><%= report.created_at %></td>
+            <td><%= report.cases.count %></td>
+        </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+</div>
