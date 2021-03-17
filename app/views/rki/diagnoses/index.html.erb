@@ -13,7 +13,7 @@
       <% @diagnoses.each do |diagnosis_data| %>
         <tr>
           <td><%= diagnosis_data.illness %></td>
-          <td><%= link_to 'All Cases', cases_diagnosis_path(diagnosis_data) %></td>
+          <td><%= link_to 'All Cases', cases_rki_diagnosis_path(diagnosis_data) %></td>
           <td><%= link_to 'Show', diagnosis_path(diagnosis_data) %></td>
           <td><%= link_to 'Edit', edit_diagnosis_path(diagnosis_data) %></td>
           <td><%= link_to 'Destroy',diagnosis_data ,method: :delete, data: { confirm: 'Are you sure?' } %></td>
