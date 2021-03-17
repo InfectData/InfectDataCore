@@ -50,10 +50,12 @@
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">State</h5>
-        <p><% @states.each do |state| %></p>
-          <p><%= state.titel %></p>
-          <p><%= state.total_cases(Date.today, params[:id]) %></p>
-        <% end %>
+          <div class="table-responive" style="height: 500px !important; overflow: scroll;">
+            <p><% @states.each do |state| %></p>
+              <p><%= state.titel %></p>
+              <p><%= state.total_cases(Date.today, params[:id]) %></p>
+            <% end %>
+          </div>
       </div>
     </div>
 
